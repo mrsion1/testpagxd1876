@@ -294,6 +294,7 @@
     const bankText = [
       `Banco: ${config.gifts.bank}`,
       `Tipo de cuenta: ${config.gifts.accountType}`,
+      `Rut: ${config.gifts.rutdep}`,
       `Número: ${config.gifts.accountNumber}`,
       `Titular: ${config.gifts.accountHolder}`,
       `Correo: ${config.gifts.email}`
