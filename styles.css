@@ -876,9 +876,9 @@ textarea:focus {
 .gift-options {
   display: grid;
   margin-top: 38px;
-
+  place-items: center;
   gap: 18px;
-  text-align: left;
+  text-align: center;
 }
 
 .gift-options article {
