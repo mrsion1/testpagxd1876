@@ -5,20 +5,20 @@
 
 window.WEDDING_CONFIG = {
   couple: {
-    partner1: "Carolina",
-    partner2: "Franco",
-    initials: "C & F",
+    partner1: "Maria Carolina",
+    partner2: "Franco Javier",
+    initials: "MC & FJ",
     quote: "El mejor lugar del mundo es aquel donde estamos juntos."
   },
 
   event: {
     // Formato recomendado: AAAA-MM-DDTHH:MM:SS-03:00
-    dateTime: "2026-12-20T17:30:00-03:00",
-    endDateTime: "2026-12-21T03:00:00-03:00",
+    dateTime: "2027-03-20T17:30:00-03:00",
+    endDateTime: "2027-03-21T03:00:00-03:00",
     dateText: "20 de diciembre de 2026",
-    dayText: "Domingo",
+    dayText: "Sabado",
     mainPlace: "Viña Santa Aurora · Santiago",
-    rsvpDeadline: "20 de noviembre de 2026"
+    rsvpDeadline: "20 de Marzo de 2027"
   },
 
   ceremony: {
@@ -37,17 +37,18 @@ window.WEDDING_CONFIG = {
 
   contact: {
     name: "Camila — Coordinación",
-    phoneDisplay: "+56 9 1234 5678",
+    phoneDisplay: "+56 9 5781 6859",
     phoneInternational: "56912345678"
   },
 
   gifts: {
+    rutdep: "19.261.263-2",
     registryUrl: "https://example.com/lista-de-novios",
-    bank: "Banco de ejemplo",
+    bank: "Banco Falabella",
     accountType: "Cuenta corriente",
-    accountNumber: "000000000",
-    accountHolder: "Martina Ejemplo",
-    email: "novios@ejemplo.cl"
+    accountNumber: "19830723734",
+    accountHolder: "Maria Ortiz",
+    email: "mcarolina.ortiz.toro@gmail.com"
   },
 
   social: {
