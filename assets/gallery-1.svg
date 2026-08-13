@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 700">
+<defs><linearGradient id="g" x2="1" y2="1"><stop stop-color="#71806b"/><stop offset="1" stop-color="#c6b7a1"/></linearGradient></defs>
+<rect width="600" height="700" fill="url(#g)"/>
+<circle cx="300" cy="240" r="145" fill="#fffdf9" opacity=".2"/>
+<path d="M0 470c150-110 230 60 350-30s170-20 250 25v235H0z" fill="#405347" opacity=".55"/>
+<circle cx="270" cy="300" r="48" fill="#26372f"/><circle cx="350" cy="300" r="48" fill="#26372f"/>
+<path d="M205 500c15-130 35-185 65-185s55 55 68 185zM285 500c18-130 38-185 68-185s55 55 70 185z" fill="#26372f"/>
+<rect x="55" y="560" width="490" height="86" rx="43" fill="#fffdf9" opacity=".82"/>
+<text x="300" y="615" text-anchor="middle" font-family="serif" font-size="34" fill="#26372f">Un paseo juntos</text>
+</svg>

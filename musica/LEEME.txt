@@ -1,0 +1,6 @@
+Coloca en esta carpeta tus archivos MP3.
+
+Puedes conservar los nombres cancion-01.mp3, cancion-02.mp3, etc., o cambiar
+las rutas, títulos, artistas, álbumes y portadas dentro de config.js, en music.tracks.
+
+Los tres MP3 incluidos son pistas originales de demostración y pueden reemplazarse.

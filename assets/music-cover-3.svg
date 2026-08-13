@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+<defs><radialGradient id="g"><stop stop-color="#7d8b78"/><stop offset="1" stop-color="#26372f"/></radialGradient></defs>
+<rect width="600" height="600" rx="50" fill="url(#g)"/>
+<g fill="#f4e7d3" opacity=".8"><circle cx="160" cy="170" r="12"/><circle cx="455" cy="145" r="9"/><circle cx="490" cy="320" r="14"/><circle cx="118" cy="350" r="8"/></g>
+<path d="M300 110l38 116 122 1-98 72 36 117-98-69-98 69 36-117-98-72 122-1z" fill="none" stroke="#f4e7d3" stroke-width="12" opacity=".75"/>
+<text x="300" y="515" fill="#fffdf9" text-anchor="middle" font-family="serif" font-size="42">Hasta siempre</text>
+</svg>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Invitación de boda de Carolina y Franco"
+  />
+  <title>Nos casamos | Invitación de boda</title>
+  <link rel="icon" href="assets/rings.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="assets/rings.svg" alt="" width="38" height="38" />
+        <span id="navCouple">M &amp; S</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        aria-label="Abrir menú"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#bienvenida">Nosotros</a>
+        <a href="#evento">Evento</a>
+        <a href="#cuenta-regresiva">Cuenta</a>
+        <a href="#cronograma">Programa</a>
+        <a href="#confirmacion">Confirmar</a>
+        <a href="#vestimenta">Vestimenta</a>
+        <a href="#regalos">Regalos</a>
+        <a href="#historia">Historia</a>
+        <a href="#musica">Música</a>
+        <a href="#informacion">Información</a>
+        <a href="#preferencias">Alimentos</a>
+        <a href="#acompanantes">Invitados</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#recuerdos">Recuerdos</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio" data-section>
+      <div class="hero-overlay"></div>
+      <div class="hero-decoration hero-decoration-left"></div>
+      <div class="hero-decoration hero-decoration-right"></div>
+
+      <div class="hero-content container reveal">
+        <p class="eyebrow">Tenemos una noticia muy especial</p>
+        <h1>Nos casamos</h1>
+        <p class="hero-couple" id="heroCouple">Carolina &amp; Franco</p>
+        <div class="hero-divider" aria-hidden="true">
+          <span></span><img src="assets/rings.svg" alt="" /><span></span>
+        </div>
+        <p class="hero-date" id="heroDate">20 de diciembre de 2026</p>
+        <p class="hero-place" id="heroPlace">Viña Santa Aurora · Santiago</p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#confirmacion">Confirmar asistencia</a>
+          <a class="button button-ghost" href="#evento">Ver detalles</a>
+        </div>
+      </div>
+
+      <a class="scroll-indicator" href="#bienvenida" aria-label="Desplazarse a la siguiente sección">
+        <span>Descubre nuestra invitación</span>
+        <span class="arrow">↓</span>
+      </a>
+    </section>
+
+    <section class="section welcome-section" id="bienvenida" data-section>
+      <div class="container narrow reveal">
+        <p class="section-kicker">Un día para recordar</p>
+        <h2>Queremos celebrarlo contigo</h2>
+        <img class="section-ornament" src="assets/floral-divider.svg" alt="" />
+        <p class="lead">
+          Hay momentos en la vida que son especiales por sí solos, pero compartirlos
+          con las personas que queremos los vuelve inolvidables.
+        </p>
+        <blockquote id="romanticQuote">
+          “El mejor lugar del mundo es aquel donde estamos juntos.”
+        </blockquote>
+        <p>
+          Después de recorrer tantos caminos, reír, aprender y crecer juntos,
+          hemos decidido comenzar una nueva aventura. Será una alegría inmensa
+          contar con tu presencia.
+        </p>
+        <p class="signature" id="welcomeSignature">Carolina y Franco</p>
+      </div>
+    </section>
+
+    <section class="section event-section" id="evento" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Guarda la fecha</p>
+          <h2>Fecha, hora y ubicación</h2>
+          <p>Todo lo que necesitas para acompañarnos en este día.</p>
+        </div>
+
+        <div class="event-grid">
+          <article class="info-card reveal">
+            <div class="card-icon" aria-hidden="true">♡</div>
+            <h3>Ceremonia</h3>
+            <p class="card-highlight" id="ceremonyTime">17:30 horas</p>
+            <p id="ceremonyVenue">Capilla Santa Clara</p>
+            <p id="ceremonyAddress">Camino Los Almendros 2450, Pirque, Región Metropolitana</p>
+            <a
+              class="text-link maps-link"
+              id="ceremonyMaps"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Abrir en Google Maps →</a>
+          </article>
+
+          <article class="info-card reveal">
+            <div class="card-icon" aria-hidden="true">✦</div>
+            <h3>Celebración</h3>
+            <p class="card-highlight" id="receptionTime">19:00 horas</p>
+            <p id="receptionVenue">Viña Santa Aurora</p>
+            <p id="receptionAddress">Camino El Principal 3880, Pirque, Región Metropolitana</p>
+            <a
+              class="text-link maps-link"
+              id="receptionMaps"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Abrir en Google Maps →</a>
+          </article>
+
+          <article class="info-card reveal">
+            <div class="card-icon" aria-hidden="true">◷</div>
+            <h3>Fecha</h3>
+            <p class="card-highlight" id="eventDay">Domingo</p>
+            <p id="eventFullDate">20 de diciembre de 2026</p>
+            <button class="text-link button-link" id="calendarButton" type="button">
+              Agregar al calendario →
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section countdown-section" id="cuenta-regresiva" data-section>
+      <div class="container reveal">
+        <p class="section-kicker light">Cada día falta menos</p>
+        <h2>Cuenta regresiva</h2>
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><strong id="days">00</strong><span>Días</span></div>
+          <div><strong id="hours">00</strong><span>Horas</span></div>
+          <div><strong id="minutes">00</strong><span>Minutos</span></div>
+          <div><strong id="seconds">00</strong><span>Segundos</span></div>
+        </div>
+        <p class="countdown-message" id="countdownMessage">
+          Estamos contando los días para celebrar junto a ustedes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section schedule-section" id="cronograma" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Nuestro gran día</p>
+          <h2>Cronograma de la boda</h2>
+          <p>Una guía general de los momentos que compartiremos.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <time>17:30</time>
+            <div class="timeline-dot"></div>
+            <div>
+              <h3>Ceremonia</h3>
+              <p>Nos reuniremos para acompañar el momento más importante del día.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>18:30</time>
+            <div class="timeline-dot"></div>
+            <div>
+              <h3>Cóctel</h3>
+              <p>Brindis de bienvenida, fotografías y aperitivos.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>20:00</time>
+            <div class="timeline-dot"></div>
+            <div>
+              <h3>Cena</h3>
+              <p>Compartiremos la mesa, palabras especiales y algunas sorpresas.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>22:00</time>
+            <div class="timeline-dot"></div>
+            <div>
+              <h3>Baile</h3>
+              <p>La pista se abre para celebrar, bailar y disfrutar juntos.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <time>03:00</time>
+            <div class="timeline-dot"></div>
+            <div>
+              <h3>Cierre</h3>
+              <p>Fin estimado de la celebración y regreso del transporte contratado.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp-section" id="confirmacion" data-section>
+      <div class="container form-layout">
+        <div class="form-intro reveal">
+          <p class="section-kicker">RSVP</p>
+          <h2>Confirma tu asistencia</h2>
+          <p>
+            Tu respuesta nos ayudará a preparar cada detalle. Puedes confirmar
+            hasta el <strong id="rsvpDeadline">20 de noviembre de 2026</strong>.
+          </p>
+          <p class="small-note">
+            Al enviar, la información quedará guardada en este dispositivo y podrás
+            enviarla por WhatsApp a la persona encargada.
+          </p>
+        </div>
+
+        <form class="wedding-form reveal" id="rsvpForm">
+          <div class="field-group">
+            <label for="guestName">Nombre y apellido</label>
+            <input id="guestName" name="guestName" type="text" autocomplete="name" required />
+          </div>
+
+          <fieldset>
+            <legend>¿Podrás acompañarnos?</legend>
+            <div class="option-row">
+              <label class="choice-card">
+                <input type="radio" name="attendance" value="Sí, asistiré" required />
+                <span>¡Sí, asistiré!</span>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="attendance" value="No podré asistir" required />
+                <span>No podré asistir</span>
+              </label>
+            </div>
+          </fieldset>
+
+
+
+          <button class="button button-primary full-width" type="submit">
+            Guardar confirmación
+          </button>
+
+          <div class="form-feedback" id="rsvpFeedback" role="status"></div>
+          <a
+            class="button button-whatsapp full-width hidden"
+            id="sendRsvpWhatsApp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Enviar confirmación por WhatsApp</a>
+        </form>
+      </div>
+    </section>
+
+    <section class="section dress-section" id="vestimenta" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Para lucir y disfrutar</p>
+          <h2>Código de vestimenta</h2>
+        </div>
+
+        <div class="dress-card reveal">
+          <div>
+            <p class="dress-label">Formal campestre</p>
+            <h3>Elegante, cómodo y preparado para celebrar</h3>
+            <p>
+              Sugerimos tonos tierra, verde, azul, burdeos, rosa empolvado y colores
+              suaves. Agradecemos reservar el blanco y tonos marfil para la novia.
+            </p>
+          </div>
+
+          <div class="palette" aria-label="Paleta de colores sugerida">
+            <span style="--swatch:#6f7d58" title="Verde oliva"></span>
+            <span style="--swatch:#b77762" title="Terracota"></span>
+            <span style="--swatch:#c9a8a0" title="Rosa empolvado"></span>
+            <span style="--swatch:#31465c" title="Azul profundo"></span>
+            <span style="--swatch:#7e4048" title="Burdeos"></span>
+          </div>
+
+          <ul class="check-list">
+            <li>La celebración incluye espacios al aire libre.</li>
+            <li>Recomendamos llevar abrigo para la noche.</li>
+            <li>Prefiere calzado cómodo o de taco ancho.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gifts-section" id="regalos" data-section>
+      <div class="container narrow reveal">
+        <p class="section-kicker">Tu presencia es nuestro mejor regalo</p>
+        <h2>Regalos y luna de miel</h2>
+        <img class="section-ornament" src="assets/floral-divider.svg" alt="" />
+        <p>
+          Lo más importante para nosotros es compartir este día contigo. Para quienes
+          deseen hacernos un obsequio, hemos preparado estas alternativas:
+        </p>
+
+        <div class="gift-options">
+
+
+          <article>
+            <h3>Aporte a luna de miel</h3>
+            <p>También puedes ayudarnos a crear recuerdos en nuestra próxima aventura.</p>
+            <button class="button button-secondary" id="bankDetailsButton" type="button">
+              Ver datos de aporte
+            </button>
+          </article>
+        </div>
+
+        <div class="bank-details hidden" id="bankDetails">
+          <p><strong>Banco:</strong> <span id="bankName">Banco de ejemplo</span></p>
+          <p><strong>Tipo de cuenta:</strong> <span id="accountType">Cuenta corriente</span></p>
+          <p><strong>Número:</strong> <span id="accountNumber">000000000</span></p>
+          <p><strong>Titular:</strong> <span id="accountHolder">Carolina Ejemplo</span></p>
+          <p><strong>Correo:</strong> <span id="accountEmail">novios@ejemplo.cl</span></p>
+          <button class="text-link button-link" id="copyBankDetails" type="button">
+            Copiar datos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-section" id="historia" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Nuestro camino</p>
+          <h2>Nuestra historia</h2>
+        </div>
+
+        <div class="story-grid">
+          <div class="story-photo reveal">
+            <img src="assets/story-main.svg" alt="Ilustración decorativa de la pareja" />
+          </div>
+
+          <div class="story-copy reveal">
+            <p>
+              Nos conocimos en una tarde inesperada, de esas que comienzan como cualquier
+              otra y terminan cambiándolo todo. Una conversación se convirtió en muchas,
+              y muy pronto descubrimos que compartíamos sueños, sentido del humor y ganas
+              de construir un futuro juntos.
+            </p>
+            <p>
+              Entre viajes, celebraciones, desafíos y pequeños momentos cotidianos,
+              aprendimos que el amor también está en acompañarse, escucharse y elegir
+              caminar en la misma dirección.
+            </p>
+            <p>
+              Hoy queremos celebrar el comienzo de una nueva etapa rodeados de las personas
+              que han sido parte de nuestra historia.
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery" aria-label="Galería de recuerdos">
+          <button class="gallery-item reveal" type="button" data-image="assets/gallery-1.svg" aria-label="Abrir foto 1">
+            <img src="assets/gallery-1.svg" alt="Recuerdo de la pareja en la naturaleza" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="assets/gallery-2.svg" aria-label="Abrir foto 2">
+            <img src="assets/gallery-2.svg" alt="Recuerdo de un viaje de la pareja" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="assets/gallery-3.svg" aria-label="Abrir foto 3">
+            <img src="assets/gallery-3.svg" alt="Recuerdo de una celebración" />
+          </button>
+          <button class="gallery-item reveal" type="button" data-image="assets/gallery-4.svg" aria-label="Abrir foto 4">
+            <img src="assets/gallery-4.svg" alt="Recuerdo romántico de la pareja" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section music-section" id="musica" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">La banda sonora de nuestra historia</p>
+          <h2>Nuestra música</h2>
+          <p>
+            Estas canciones nos han acompañado en momentos especiales. Puedes elegir una
+            canción o dejar que la playlist avance automáticamente en orden.
+          </p>
+        </div>
+
+        <div class="playlist-grid" id="playlistCards" aria-label="Playlist de la boda"></div>
+      </div>
+    </section>
+
+    <section class="section practical-section" id="informacion" data-section>
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Antes de salir de casa</p>
+          <h2>Información práctica</h2>
+        </div>
+
+        <div class="practical-grid">
+          <article class="practical-card reveal">
+            <span aria-hidden="true">P</span>
+            <h3>Estacionamiento</h3>
+            <p>El recinto cuenta con estacionamiento gratuito y personal de orientación.</p>
+          </article>
+          <article class="practical-card reveal">
+            <span aria-hidden="true">↔</span>
+            <h3>Transporte</h3>
+            <p>Habrá buses de ida y regreso desde un punto previamente informado.</p>
+          </article>
+          <article class="practical-card reveal">
+            <span aria-hidden="true">♿</span>
+            <h3>Accesibilidad</h3>
+            <p>Existen accesos y baños habilitados para personas con movilidad reducida.</p>
+          </article>
+          <article class="practical-card reveal">
+            <span aria-hidden="true">☾</span>
+            <h3>Clima y término</h3>
+            <p>La noche puede ser fresca. El término estimado de la celebración es a las 03:00.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section preferences-section" id="preferencias" data-section>
+      <div class="container form-layout reverse">
+        <div class="form-intro reveal">
+          <p class="section-kicker">Queremos cuidarte</p>
+          <h2>Preferencias alimentarias</h2>
+          <p>
+            Cuéntanos si tienes alergias, restricciones o necesitas un menú especial.
+            Esta información será considerada por el equipo de banquetería.
+          </p>
+        </div>
+
+        <form class="wedding-form reveal" id="foodForm">
+          <div class="field-group">
+            <label for="foodGuestName">Nombre del invitado</label>
+            <input id="foodGuestName" name="foodGuestName" type="text" required />
+          </div>
+
+          <fieldset>
+            <legend>Selecciona las opciones que correspondan</legend>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="foodPreference" value="Menú tradicional" /> Menú tradicional</label>
+              <label><input type="checkbox" name="foodPreference" value="Vegetariano" /> Vegetariano</label>
+              <label><input type="checkbox" name="foodPreference" value="Vegano" /> Vegano</label>
+              <label><input type="checkbox" name="foodPreference" value="Sin gluten" /> Sin gluten</label>
+              <label><input type="checkbox" name="foodPreference" value="Sin lactosa" /> Sin lactosa</label>
+              <label><input type="checkbox" name="foodPreference" value="Alergias" /> Tengo alergias</label>
+            </div>
+          </fieldset>
+
+          <div class="field-group">
+            <label for="foodDetails">Describe la restricción o alergia</label>
+            <textarea
+              id="foodDetails"
+              name="foodDetails"
+              rows="4"
+              placeholder="Ejemplo: alergia a frutos secos"
+            ></textarea>
+          </div>
+
+          <button class="button button-primary full-width" type="submit">
+            Guardar preferencia
+          </button>
+          <div class="form-feedback" id="foodFeedback" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section companions-section" id="acompanantes" data-section>
+      <div class="container narrow reveal">
+        <p class="section-kicker">Invitación personalizada</p>
+        <h2>Niños y acompañantes</h2>
+        <img class="section-ornament" src="assets/floral-divider.svg" alt="" />
+        <p>
+          Hemos preparado una celebración principalmente para adultos. La cantidad de
+          cupos asignados a cada invitación aparece en la confirmación de asistencia.
+        </p>
+        <div class="notice-box">
+          <strong>Importante:</strong>
+          <p>
+            Los acompañantes y niños deben estar incluidos previamente en la invitación.
+            Ante cualquier duda sobre los cupos disponibles, comunícate con nuestra persona
+            de contacto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contacto" data-section>
+      <div class="container">
+        <div class="contact-card reveal">
+          <div>
+            <p class="section-kicker light">Estamos para ayudarte</p>
+            <h2>¿Tienes alguna duda?</h2>
+            <p>
+              Para consultas sobre transporte, ubicación, cupos o cualquier detalle del evento,
+              puedes comunicarte con nuestra coordinadora.
+            </p>
+          </div>
+
+          <div class="contact-actions">
+            <p class="contact-name" id="contactName">Camila — Coordinación</p>
+            <a class="button button-light" id="whatsAppLink" href="#" target="_blank" rel="noopener noreferrer">
+              Escribir por WhatsApp
+            </a>
+            <a class="text-link light-link" id="phoneLink" href="tel:+56912345678">
+              +56 9 1234 5678
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hashtag-section" id="recuerdos" data-section>
+      <div class="container narrow reveal">
+        <p class="section-kicker">Compartamos los recuerdos</p>
+        <h2>Fotos, videos y mensajes</h2>
+        <p>
+          Nos encantará ver la celebración desde tu mirada. Comparte tus recuerdos usando:
+        </p>
+        <button class="hashtag" id="hashtagButton" type="button" title="Copiar hashtag">
+          #CarolinaYFranco
+        </button>
+        <p class="small-note" id="hashtagFeedback">Presiona la etiqueta para copiarla.</p>
+      </div>
+    </section>
+
+    <section class="section closing-section" id="cierre" data-section>
+      <div class="closing-overlay"></div>
+      <div class="container narrow reveal">
+        <img class="closing-rings" src="assets/rings-light.svg" alt="" />
+        <p class="section-kicker light">Gracias por ser parte de nuestra historia</p>
+        <h2>El día será perfecto porque podremos compartirlo contigo</h2>
+        <p>
+          Gracias por acompañarnos, por el cariño y por cada recuerdo que construiremos juntos.
+        </p>
+        <p class="closing-signature" id="closingSignature">
+          Con cariño,<br />Carolina &amp; Franco
+        </p>
+        <a class="button button-light" href="#inicio">Volver al inicio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <span id="footerCouple">Carolina &amp; Franco</span>
+      · <span id="footerYear">2026</span>
+    </p>
+  </footer>
+
+  <dialog class="gallery-modal" id="galleryModal">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Cerrar imagen">×</button>
+    <img id="modalImage" src="" alt="Recuerdo ampliado de la pareja" />
+  </dialog>
+
+
+  <div class="music-start-prompt hidden" id="musicStartPrompt" role="status">
+    <button class="button button-primary" id="musicStartButton" type="button">
+      ♫ Iniciar música
+    </button>
+    <span>Tu navegador necesita una interacción para activar el sonido.</span>
+  </div>
+
+  <aside class="music-player" id="musicPlayer" aria-label="Reproductor de música">
+    <audio id="weddingAudio" preload="metadata" playsinline></audio>
+
+    <button
+      class="player-collapse"
+      id="playerCollapseButton"
+      type="button"
+      aria-label="Minimizar reproductor"
+      aria-expanded="true"
+      title="Minimizar reproductor"
+    >⌄</button>
+
+    <div class="player-track">
+      <img class="player-cover" id="playerCover" src="assets/music-cover-1.svg" alt="Portada de la canción" />
+      <div class="player-copy">
+        <span class="player-caption">Ahora suena</span>
+        <strong id="playerTitle">Canción de ejemplo</strong>
+        <span id="playerArtist">Artista de ejemplo</span>
+      </div>
+    </div>
+
+    <div class="player-center">
+      <div class="player-transport" aria-label="Controles de reproducción">
+        <button id="previousTrackButton" type="button" aria-label="Canción anterior" title="Canción anterior">⏮</button>
+        <button id="rewindButton" type="button" aria-label="Retroceder 10 segundos" title="Retroceder 10 segundos">−10</button>
+        <button class="player-play" id="playPauseButton" type="button" aria-label="Reproducir" title="Reproducir">▶</button>
+        <button id="forwardButton" type="button" aria-label="Adelantar 10 segundos" title="Adelantar 10 segundos">+10</button>
+        <button id="nextTrackButton" type="button" aria-label="Canción siguiente" title="Canción siguiente">⏭</button>
+      </div>
+
+      <div class="player-progress-row">
+        <span id="currentTime">0:00</span>
+        <input
+          id="progressSlider"
+          type="range"
+          min="0"
+          max="100"
+          value="0"
+          step="0.1"
+          aria-label="Progreso de la canción"
+        />
+        <span id="durationTime">0:00</span>
+      </div>
+    </div>
+
+    <div class="player-volume">
+      <button id="muteButton" type="button" aria-label="Silenciar" title="Silenciar">🔊</button>
+      <input
+        id="volumeSlider"
+        type="range"
+        min="0"
+        max="1"
+        value="0.55"
+        step="0.01"
+        aria-label="Volumen"
+      />
+      <button id="openPlaylistButton" type="button" aria-label="Ir a la playlist" title="Ir a la playlist">☷</button>
+    </div>
+  </aside>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

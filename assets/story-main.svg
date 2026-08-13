@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 850">
+<defs><linearGradient id="bg" y2="1"><stop stop-color="#d6d5c7"/><stop offset="1" stop-color="#8f9c86"/></linearGradient></defs>
+<rect width="700" height="850" fill="url(#bg)"/>
+<circle cx="350" cy="215" r="150" fill="#f8f3ea" opacity=".42"/>
+<g fill="#26372f">
+<circle cx="275" cy="310" r="70"/><path d="M170 700c15-205 55-310 105-310s90 105 105 310z"/>
+<circle cx="430" cy="300" r="74"/><path d="M320 700c20-215 60-325 110-325s92 110 110 325z"/>
+</g>
+<path d="M320 280c40 35 78 35 118 0" fill="none" stroke="#b98378" stroke-width="8" stroke-linecap="round"/>
+<g fill="#f8f3ea" opacity=".6"><circle cx="92" cy="98" r="20"/><circle cx="605" cy="142" r="18"/><circle cx="580" cy="680" r="26"/></g>
+<text x="350" y="790" text-anchor="middle" font-family="serif" font-size="38" fill="#fffdf9">Nuestra historia</text>
+</svg>
