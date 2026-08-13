@@ -43,6 +43,7 @@
 
   setText("#bankName", config.gifts.bank);
   setText("#accountType", config.gifts.accountType);
+  setText("#rutdep", config.gifts.rutdep);
   setText("#accountNumber", config.gifts.accountNumber);
   setText("#accountHolder", config.gifts.accountHolder);
   setText("#accountEmail", config.gifts.email);
