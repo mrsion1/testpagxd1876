@@ -51,7 +51,7 @@ window.WEDDING_CONFIG = {
   },
 
   social: {
-    hashtag: "#MartinaYFranco"
+    hashtag: "#CarolinaYFranco"
   },
 
   music: {
