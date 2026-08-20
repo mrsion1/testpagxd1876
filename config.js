@@ -61,6 +61,7 @@ window.WEDDING_CONFIG = {
     autoplay: true,
     initialVolume: 0.55,
     tracks: [
+      /*
       {
         title: "MTC",
         artist: "S3RL",
@@ -81,6 +82,14 @@ window.WEDDING_CONFIG = {
         album: "Recuerdos",
         file: "musica/cancion-03.mp3",
         cover: "assets/music-cover-3.svg"
+      }
+      */
+      {
+        title: "Amour",
+        artist: "Eben Vogel",
+        album: "Recuerdos",
+        file: "musica/cancion-04.mp3",
+        cover: "assets/music-cover-4.jpeg"
       }
     ]
   }
