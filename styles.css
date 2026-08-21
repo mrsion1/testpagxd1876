@@ -63,6 +63,9 @@ h3,
 blockquote,
 .signature,
 .hero-couple,
+.hero-couple2,
+.hero-couple3,
+.hero-couple4,
 .closing-signature {
   font-family: Georgia, "Times New Roman", serif;
 }
@@ -304,7 +307,10 @@ h3 {
   line-height: 0.8;
 }
 
-.hero-couple {
+.hero-couple,
+.hero-couple2,
+.hero-couple3,
+.hero-couple4, {
   margin-bottom: 14px;
   color: var(--rose);
   font-size: clamp(2.2rem, 6vw, 4.6rem);
@@ -1286,7 +1292,10 @@ footer p {
     font-size: clamp(4rem, 21vw, 6.5rem);
   }
 
-  .hero-couple {
+  .hero-couple,
+  .hero-couple2,
+  .hero-couple3,
+  .hero-couple4, {
     font-size: 2.4rem;
   }
 
