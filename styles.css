@@ -310,7 +310,7 @@ h3 {
 .hero-couple,
 .hero-couple2,
 .hero-couple3,
-.hero-couple4, {
+.hero-couple4 {
   margin-bottom: 14px;
   color: var(--rose);
   font-size: clamp(2.2rem, 6vw, 4.6rem);
@@ -1295,7 +1295,7 @@ footer p {
   .hero-couple,
   .hero-couple2,
   .hero-couple3,
-  .hero-couple4, {
+  .hero-couple4 {
     font-size: 2.4rem;
   }
 
