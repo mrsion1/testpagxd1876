@@ -12,11 +12,14 @@
 
   const fullCouple = `${config.couple.partner1} & ${config.couple.partner2}`;
   const fullCoupleWords = `${config.couple.partner1} y ${config.couple.partner2}`;
-
+  const pareja1xd =`${config.couple.partner1}`;
+  const pareja2xd =`${config.couple.partner2}`;
   // Inserción de datos configurables
   document.title = `Nos casamos | ${fullCouple}`;
   setText("#navCouple", config.couple.initials);
   setText("#heroCouple", fullCouple);
+  setText("#heroCouple3", pareja1xd);
+  setText("#heroCouple2", pareja2xd);
   setText("#heroDate", config.event.dateText);
   setText("#heroPlace", config.event.mainPlace);
   setText("#romanticQuote", `“${config.couple.quote}”`);
