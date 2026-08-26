@@ -224,6 +224,16 @@
     event.preventDefault();
 
     const formData = new FormData(rsvpForm);
+    const data = Object.fromEntries(formData.entries());
+
+    if (!window.supabaseClient) {
+        console.error("Supabase no está inicializado");
+
+        rsvpFeedback.textContent =
+            "No se pudo conectar con el sistema de confirmaciones.";
+
+        return;
+    }
     const { error } = await window.supabaseClient
     .from("confirmaciones")
     .insert({
