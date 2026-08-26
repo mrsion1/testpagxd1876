@@ -223,8 +223,26 @@
     event.preventDefault();
 
     const formData = new FormData(rsvpForm);
-    const data = Object.fromEntries(formData.entries());
-    data.savedAt = new Date().toISOString();
+    const { error } = await window.supabaseClient
+    .from("confirmaciones")
+    .insert({
+        nombre: data.guestName,
+        asistencia: data.attendance
+    });
+    if (error) {
+    console.error(error);
+
+    rsvpFeedback.textContent =
+        "No pudimos guardar tu confirmación. Intenta nuevamente.";
+
+    return;
+    }
+
+rsvpFeedback.textContent =
+    "¡Confirmación enviada correctamente! Muchas gracias.";
+    rsvpForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
 
     try {
       localStorage.setItem("weddingRsvp", JSON.stringify(data));
