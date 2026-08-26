@@ -288,28 +288,7 @@ rsvpFeedback.textContent =
   }
 
   // Preferencias alimentarias
-  const foodForm = $("#foodForm");
-  const foodFeedback = $("#foodFeedback");
-
-  foodForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(foodForm);
-    const preferences = formData.getAll("foodPreference");
-    const data = {
-      guestName: formData.get("foodGuestName"),
-      preferences,
-      details: formData.get("foodDetails"),
-      savedAt: new Date().toISOString()
-    };
-
-    try {
-      localStorage.setItem("weddingFoodPreferences", JSON.stringify(data));
-      foodFeedback.textContent = "Tus preferencias fueron guardadas correctamente.";
-    } catch {
-      foodFeedback.textContent = "Preferencias registradas en el formulario.";
-    }
-  });
+  
 
   // Datos bancarios
   const bankDetails = $("#bankDetails");
@@ -418,37 +397,16 @@ rsvpFeedback.textContent =
   };
 
   const renderPlaylist = () => {
-    playlistCards.innerHTML = "";
+    
 
     tracks.forEach((track, index) => {
-      const card = document.createElement("button");
-      card.type = "button";
-      card.className = "playlist-card";
-      card.dataset.trackIndex = String(index);
-      card.setAttribute("aria-label", `Reproducir ${track.title} de ${track.artist}`);
-      card.innerHTML = `
-        <img src="${track.cover || "assets/music-cover-1.svg"}" alt="" />
-        <span class="playlist-card-copy">
-          <strong>${track.title}</strong>
-          <span>${track.artist}${track.album ? ` · ${track.album}` : ""}</span>
-        </span>
-        <span class="playlist-card-number">${String(index + 1).padStart(2, "0")}</span>
-        <span class="playlist-card-state">Reproduciendo ♫</span>
-      `;
-      card.addEventListener("click", () => {
+      
         loadTrack(index, true, 0);
-      });
-      playlistCards.appendChild(card);
+
     });
   };
 
-  const updateActiveTrack = () => {
-    $$(".playlist-card", playlistCards).forEach((card, index) => {
-      const active = index === currentTrackIndex;
-      card.classList.toggle("active", active);
-      card.setAttribute("aria-pressed", String(active));
-    });
-  };
+  
 
   const updatePlayButton = () => {
     const playing = !audio.paused && !audio.ended;
@@ -508,7 +466,7 @@ rsvpFeedback.textContent =
     setText("#currentTime", "0:00");
     setText("#durationTime", "0:00");
     progressSlider.value = "0";
-    updateActiveTrack();
+
     updatePlayButton();
 
     safeStorageSet("weddingMusicTrack", String(currentTrackIndex));
