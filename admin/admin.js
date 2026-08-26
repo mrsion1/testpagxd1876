@@ -137,7 +137,7 @@
 
     const { data, error } = await client
       .from("confirmaciones")
-      .select("id,nombre,asistencia,cantidad_personas,acompanante,comentario,fecha_confirmacion")
+      .select("id,nombre,asistencia,fecha_confirmacion")
       .order("fecha_confirmacion", { ascending: false });
 
     loadingState.classList.add("hidden");
