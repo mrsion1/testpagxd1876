@@ -79,9 +79,6 @@
       const tr = document.createElement("tr");
       tr.appendChild(makeCell("Nombre", item.nombre || "—"));
       tr.appendChild(makeStatusCell(item.asistencia));
-      tr.appendChild(makeCell("Personas", item.cantidad_personas ?? "—"));
-      tr.appendChild(makeCell("Acompañante", item.acompanante || "—"));
-      tr.appendChild(makeCell("Comentario", item.comentario || "—", "comment-cell"));
       tr.appendChild(makeCell("Fecha", formatDate(item.fecha_confirmacion)));
       confirmationsBody.appendChild(tr);
     });
@@ -99,10 +96,10 @@
     const yes = confirmations.filter((x) => isYes(x.asistencia));
     const no = confirmations.filter((x) => isNo(x.asistencia));
 
-    const people = yes.reduce((total, x) => {
-      const n = Number(x.cantidad_personas);
-      return total + (Number.isFinite(n) ? n : 0);
-    }, 0);
+    $("#statTotal").textContent = confirmations.length;
+    $("#statYes").textContent = yes.length;
+    $("#statNo").textContent = no.length;
+    }
 
     $("#statTotal").textContent = confirmations.length;
     $("#statYes").textContent = yes.length;
@@ -136,9 +133,11 @@
     errorState.classList.add("hidden");
 
     const { data, error } = await client
-      .from("confirmaciones")
-      .select("id,nombre,asistencia,fecha_confirmacion")
-      .order("fecha_confirmacion", { ascending: false });
+    .from("confirmaciones")
+    .select(
+        "id,nombre,asistencia,fecha_confirmacion"
+    )
+    .order("fecha_confirmacion", { ascending: false });
 
     loadingState.classList.add("hidden");
 
