@@ -116,12 +116,15 @@
     }
 
     const filtered = confirmations.filter((x) =>
-      [x.nombre, x.asistencia, x.acompanante, x.comentario]
+    [
+        x.nombre,
+        x.asistencia
+    ]
         .filter(Boolean)
         .join(" ")
         .toLocaleLowerCase("es")
         .includes(q)
-    );
+);
 
     renderRows(filtered);
   }
