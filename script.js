@@ -219,7 +219,8 @@
     `Comentario: ${data.rsvpComment || "Sin comentarios"}`
   ].join("\n");
 
-  rsvpForm.addEventListener("submit", (event) => {
+  rsvpForm.addEventListener("submit", async (event) => {
+
     event.preventDefault();
 
     const formData = new FormData(rsvpForm);
@@ -240,9 +241,7 @@
 
 rsvpFeedback.textContent =
     "¡Confirmación enviada correctamente! Muchas gracias.";
-    rsvpForm.addEventListener("submit", async (event) => {
-
-    event.preventDefault();
+    
 
     try {
       localStorage.setItem("weddingRsvp", JSON.stringify(data));
