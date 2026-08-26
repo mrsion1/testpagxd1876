@@ -92,70 +92,85 @@
         : `${rows.length} de ${confirmations.length} respuestas`;
   }
 
-  function updateStats() {
+function updateStats() {
     const yes = confirmations.filter((x) => isYes(x.asistencia));
     const no = confirmations.filter((x) => isNo(x.asistencia));
 
     $("#statTotal").textContent = confirmations.length;
     $("#statYes").textContent = yes.length;
     $("#statNo").textContent = no.length;
-    }
+}
 
-    $("#statTotal").textContent = confirmations.length;
-    $("#statYes").textContent = yes.length;
-    $("#statNo").textContent = no.length;
-    $("#statPeople").textContent = people;
-  }
 
-  function applySearch() {
-    const q = searchInput.value.trim().toLocaleLowerCase("es");
+function applySearch() {
+    const q = searchInput.value
+        .trim()
+        .toLocaleLowerCase("es");
 
     if (!q) {
-      renderRows(confirmations);
-      return;
+        renderRows(confirmations);
+        return;
     }
 
-    const filtered = confirmations.filter((x) =>
-    [
-        x.nombre,
-        x.asistencia
-    ]
-        .filter(Boolean)
-        .join(" ")
-        .toLocaleLowerCase("es")
-        .includes(q)
-);
+    const filtered = confirmations.filter((x) => {
+        const searchable = [
+            x.nombre,
+            x.asistencia
+        ]
+            .filter(Boolean)
+            .join(" ")
+            .toLocaleLowerCase("es");
+
+        return searchable.includes(q);
+    });
 
     renderRows(filtered);
-  }
+}
 
-  async function loadConfirmations() {
+
+async function loadConfirmations() {
+
     loadingState.classList.remove("hidden");
     tableWrapper.classList.add("hidden");
     emptyState.classList.add("hidden");
     errorState.classList.add("hidden");
 
     const { data, error } = await client
-    .from("confirmaciones")
-    .select(
-        "id,nombre,asistencia,fecha_confirmacion"
-    )
-    .order("fecha_confirmacion", { ascending: false });
+        .from("confirmaciones")
+        .select(
+            "id,nombre,asistencia,fecha_confirmacion"
+        )
+        .order("fecha_confirmacion", {
+            ascending: false
+        });
 
     loadingState.classList.add("hidden");
 
     if (error) {
-      console.error("Error cargando confirmaciones:", error);
-      errorState.textContent =
-        "No fue posible leer las confirmaciones. Revisa RLS y permisos en Supabase.";
-      errorState.classList.remove("hidden");
-      return;
+
+        console.error("ERROR COMPLETO SUPABASE:");
+        console.error(error);
+
+        console.log("Código:", error.code);
+        console.log("Mensaje:", error.message);
+        console.log("Detalles:", error.details);
+        console.log("Hint:", error.hint);
+
+        errorState.textContent =
+            `Error ${error.code || ""}: ${error.message || "Error desconocido"}`;
+
+        errorState.classList.remove("hidden");
+
+        return;
     }
 
-    confirmations = Array.isArray(data) ? data : [];
+    confirmations = Array.isArray(data)
+        ? data
+        : [];
+
     updateStats();
     applySearch();
-  }
+}
 
   async function getAuthorizedProfile(user) {
     const { data, error } = await client
