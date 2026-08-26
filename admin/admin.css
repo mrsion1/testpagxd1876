@@ -163,11 +163,11 @@ h1,h2{
   margin:auto;
   padding:36px 0 70px;
 }
-.stats-grid{
-  display:grid;
-  margin-bottom:24px;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
+.stats-grid {
+    display: grid;
+    margin-bottom: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 .stat-card{
   padding:24px;
