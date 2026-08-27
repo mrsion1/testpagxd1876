@@ -14,18 +14,18 @@ window.WEDDING_CONFIG = {
   event: {
     // Formato recomendado: AAAA-MM-DDTHH:MM:SS-03:00
     dateTime: "2027-03-20T17:30:00-03:00",
-    endDateTime: "2027-03-21T03:00:00-03:00",
-    dateText: "20 de diciembre de 2026",
+    endDateTime: "2027-01-31T03:00:00-03:00",
+    dateText: "20 de marzo de 2027",
     dayText: "Sabado",
-    mainPlace: "Viña Santa Aurora · Santiago",
+    mainPlace: "Parroquia Divino Maestro · Rancagua",
     rsvpDeadline: "20 de Marzo de 2027"
   },
 
   ceremony: {
     time: "17:30 horas",
-    venue: "Capilla Santa Clara",
-    address: "Camino Los Almendros 2450, Pirque, Región Metropolitana",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pirque+Chile"
+    venue: "Parroquia Divino Maestro",
+    address: "Marta Brunet 038, 2831381 Rancagua, O'Higgins",
+    mapsUrl: "https://maps.app.goo.gl/Ngan9kmz31t6HtVAA"
   },
 
   reception: {
