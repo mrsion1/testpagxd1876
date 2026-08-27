@@ -18,7 +18,7 @@ window.WEDDING_CONFIG = {
     dateText: "20 de marzo de 2027",
     dayText: "Sabado",
     mainPlace: "Parroquia Divino Maestro · Rancagua",
-    rsvpDeadline: "20 de Marzo de 2027"
+    rsvpDeadline: "31 de Enero de 2027"
   },
 
   ceremony: {
@@ -29,16 +29,16 @@ window.WEDDING_CONFIG = {
   },
 
   reception: {
-    time: "19:00 horas",
+    time: "00:00 horas",
     venue: "Viña Santa Aurora",
     address: "Camino El Principal 3880, Pirque, Región Metropolitana",
     mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pirque+Chile"
   },
 
   contact: {
-    name: "Camila — Coordinación",
+    name: "Martín — Secretarie",
     phoneDisplay: "+56 9 5781 6859",
-    phoneInternational: "56912345678"
+    phoneInternational: "56957816859"
   },
 
   gifts: {
