@@ -36,9 +36,9 @@ window.WEDDING_CONFIG = {
   },
 
   contact: {
-    name: "Martín — Secretarie",
-    phoneDisplay: "+56 9 5781 6859",
-    phoneInternational: "56957816859"
+    name: "Aurora — Secretaria",
+    phoneDisplay: "+56 9 7529 7553",
+    phoneInternational: "56975297553"
   },
 
   gifts: {
