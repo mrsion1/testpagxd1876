@@ -29,10 +29,10 @@ window.WEDDING_CONFIG = {
   },
 
   reception: {
-    time: "00:00 horas",
-    venue: "Viña Santa Aurora",
-    address: "Camino El Principal 3880, Pirque, Región Metropolitana",
-    mapsUrl: "https://www.google.com/maps/search/?api=1&query=Pirque+Chile"
+    time: "19:00 horas",
+    venue: "Centro De Eventos Terrabella",
+    address: "Camino el litre, La Gloria S, N, sector, Requínoa, O'Higgins",
+    mapsUrl: "https://maps.app.goo.gl/jCWYEAkoveamBRyFA"
   },
 
   contact: {
