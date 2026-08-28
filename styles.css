@@ -872,20 +872,20 @@ textarea:focus {
   font-weight: 700;
 }
 
-.check-list-2 {
+.checklistnegativo {
   margin: 0;
   padding: 0;
   grid-column: 1 / -1;
   list-style: none;
 }
 
-.check-list-2 li {
+.checklistnegativo li {
   position: relative;
   margin: 10px 0;
   padding-left: 28px;
 }
 
-.check-list-2 li::before {
+.checklistnegativo li::before {
   position: absolute;
   left: 0;
   color: var(--redyum);
