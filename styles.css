@@ -7,6 +7,7 @@
   --rose: #b98378;
   --gold: #b39562;
   --ink: #2d302d;
+  --redyum #FF0800;
   --muted: #6d716d;
   --line: rgba(64, 83, 71, 0.18);
   --shadow: 0 20px 60px rgba(38, 55, 47, 0.12);
@@ -844,7 +845,7 @@ textarea:focus {
   width: 56px;
   height: 96px;
   margin-left: -10px;
-  border: 5px solid var(--cream);
+  border: 5px solid var(--gold);
   border-radius: 999px;
   background: var(--swatch);
   box-shadow: 0 10px 20px rgba(38, 55, 47, 0.1);
@@ -868,6 +869,27 @@ textarea:focus {
   left: 0;
   color: var(--rose);
   content: "✓";
+  font-weight: 700;
+}
+
+.check-list-2 {
+  margin: 0;
+  padding: 0;
+  grid-column: 1 / -1;
+  list-style: none;
+}
+
+.check-list-2 li {
+  position: relative;
+  margin: 10px 0;
+  padding-left: 28px;
+}
+
+.check-list-2 li::before {
+  position: absolute;
+  left: 0;
+  color: var(--redyum);
+  content: "🛇";
   font-weight: 700;
 }
 
