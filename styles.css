@@ -888,7 +888,6 @@ textarea:focus {
 .checklistnegativo li::before {
   position: absolute;
   left: 0;
-  color: var(--redyum);
   content: "🛇";
   font-weight: 700;
 }
