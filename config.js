@@ -31,12 +31,12 @@ window.WEDDING_CONFIG = {
   reception: {
     time: "19:00 horas",
     venue: "Centro De Eventos Terrabella",
-    address: "Camino el litre, La Gloria S, N, sector, Requínoa, O'Higgins",
+    address: "Camino el litre, La Gloria S, N, sector Requínoa, O'Higgins",
     mapsUrl: "https://maps.app.goo.gl/jCWYEAkoveamBRyFA"
   },
 
   contact: {
-    name: "Aurora — Secretaria",
+    name: "Aurora — Coordinadora",
     phoneDisplay: "+56 9 7529 7553",
     phoneInternational: "56975297553"
   },
