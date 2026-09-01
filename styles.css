@@ -57,7 +57,9 @@ a {
 a {
   color: inherit;
 }
-
+h1 {
+  margin-bottom: 24px;
+}
 h1,
 h2,
 h3,
