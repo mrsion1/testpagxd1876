@@ -35,7 +35,6 @@
   setText("#rsvpDeadline", config.event.rsvpDeadline);
   setText("#contactName", config.contact.name);
   setText("#phoneLink", config.contact.phoneDisplay);
-  setText("#hashtagButton", config.social.hashtag);
   setText("#footerCouple", fullCouple);
   setText("#footerYear", new Date(config.event.dateTime).getFullYear().toString());
 
@@ -318,14 +317,7 @@ rsvpFeedback.textContent =
   });
 
   // Hashtag
-  $("#hashtagButton").addEventListener("click", async () => {
-    try {
-      await navigator.clipboard.writeText(config.social.hashtag);
-      setText("#hashtagFeedback", "Hashtag copiado ✓");
-    } catch {
-      setText("#hashtagFeedback", `Copia esta etiqueta: ${config.social.hashtag}`);
-    }
-  });
+ 
 
   // Galería
   const galleryModal = $("#galleryModal");
