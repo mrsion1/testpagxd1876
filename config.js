@@ -50,11 +50,11 @@ window.WEDDING_CONFIG = {
     accountHolder: "Maria Ortiz",
     email: "mcarolina.ortiz.toro@gmail.com"
   },
-
+/*
   social: {
     hashtag: "#CarolinaYFranco"
   },
-
+*/
   music: {
     // Se intentará reproducir automáticamente. Si el navegador lo bloquea,
     // aparecerá el botón “♫ Iniciar música”.
