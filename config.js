@@ -36,7 +36,7 @@ window.WEDDING_CONFIG = {
   },
 
   contact: {
-    name: "Coordinadora",
+    name: "Coordinador/a",
     phoneDisplay: "+56 9 7529 7553",
     phoneInternational: "56975297553"
   },
