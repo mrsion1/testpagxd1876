@@ -253,7 +253,6 @@ function hideSuccessModal() {
   ].join("\n");
 
   rsvpForm.addEventListener("submit", async (event) => {
-
     event.preventDefault();
 
     const formData = new FormData(rsvpForm);
@@ -267,37 +266,32 @@ function hideSuccessModal() {
 
         return;
     }
+
     const { error } = await window.supabaseClient
-    .from("confirmaciones")
-    .insert({
-        nombre: data.guestName,
-        asistencia: data.attendance
-    });
+        .from("confirmaciones")
+        .insert({
+            nombre: data.guestName,
+            asistencia: data.attendance
+        });
+
     if (error) {
-    console.error(error);
+        console.error("Error Supabase:", error);
 
-    rsvpFeedback.textContent =
-        "No pudimos guardar tu confirmación. Intenta nuevamente.";
+        rsvpFeedback.textContent =
+            "No pudimos guardar tu confirmación. Intenta nuevamente.";
 
-    return;
+        return;
     }
-  showSuccessModal();
 
+    // Mostrar ventana personalizada
+    showSuccessModal();
+
+    // Limpiar nombre
     document.getElementById("guestName").value = "";
-    alert("¡Confirmación enviada correctamente! Muchas gracias.");
-    rsvpFeedback.textContent =
-        "¡Confirmación enviada correctamente! Muchas gracias.";  
-    
 
-    try {
-    
-    
-    } catch {
-      
-    }
-  document.getElementById("guestName").value = "";
-   
-  });
+    // Limpiar mensaje de error anterior, si existiera
+    rsvpFeedback.textContent = "";
+});
 
   // Restaurar confirmación guardada
  
