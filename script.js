@@ -248,13 +248,14 @@
     return;
     }
 
-rsvpFeedback.textContent =
-    "¡Confirmación enviada correctamente! Muchas gracias.";
+alert("¡Confirmación enviada correctamente! Muchas gracias.");
+    
     
 
     try {
-      localStorage.setItem("weddingRsvp", JSON.stringify(data));
+      
       rsvpFeedback.textContent = "Tu confirmación fue guardada correctamente.";
+      document.getElementById("guestName").value = "";
     } catch {
       
     }
