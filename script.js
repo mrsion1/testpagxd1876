@@ -256,13 +256,10 @@ rsvpFeedback.textContent =
       localStorage.setItem("weddingRsvp", JSON.stringify(data));
       rsvpFeedback.textContent = "Tu confirmación fue guardada correctamente.";
     } catch {
-      rsvpFeedback.textContent = "La confirmación está lista para enviar por WhatsApp.";
+      
     }
 
-    const message = encodeURIComponent(buildRsvpMessage(data));
-    rsvpWhatsApp.href =
-      `https://wa.me/${config.contact.phoneInternational}?text=${message}`;
-    rsvpWhatsApp.classList.remove("hidden");
+   
   });
 
   // Restaurar confirmación guardada
