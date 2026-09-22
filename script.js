@@ -252,14 +252,24 @@ function hideSuccessModal() {
     `Comentario: ${data.rsvpComment || "Sin comentarios"}`
   ].join("\n");
 
-  rsvpForm.addEventListener("submit", async (event) => {
+rsvpForm.addEventListener("submit", async (event) => {
+
     event.preventDefault();
 
-    const formData = new FormData(rsvpForm);
-    const data = Object.fromEntries(formData.entries());
+    const formData =
+        new FormData(rsvpForm);
+
+    const data =
+        Object.fromEntries(
+            formData.entries()
+        );
+
 
     if (!window.supabaseClient) {
-        console.error("Supabase no está inicializado");
+
+        console.error(
+            "Supabase no está inicializado"
+        );
 
         rsvpFeedback.textContent =
             "No se pudo conectar con el sistema de confirmaciones.";
@@ -267,15 +277,22 @@ function hideSuccessModal() {
         return;
     }
 
-    const { error } = await window.supabaseClient
-        .from("confirmaciones")
-        .insert({
-            nombre: data.guestName,
-            asistencia: data.attendance
-        });
+
+    const { error } =
+        await window.supabaseClient
+            .from("confirmaciones")
+            .insert({
+                nombre: data.guestName,
+                asistencia: data.attendance
+            });
+
 
     if (error) {
-        console.error("Error Supabase:", error);
+
+        console.error(
+            "Error Supabase:",
+            error
+        );
 
         rsvpFeedback.textContent =
             "No pudimos guardar tu confirmación. Intenta nuevamente.";
@@ -283,14 +300,23 @@ function hideSuccessModal() {
         return;
     }
 
-    // Mostrar ventana personalizada
+
+    console.log(
+        "Confirmación guardada correctamente"
+    );
+
+
+    // ABRIR MODAL
     showSuccessModal();
 
-    // Limpiar nombre
-    document.getElementById("guestName").value = "";
 
-    // Limpiar mensaje de error anterior, si existiera
+    // LIMPIAR FORMULARIO
+    rsvpForm.reset();
+
+
+    // LIMPIAR MENSAJES
     rsvpFeedback.textContent = "";
+
 });
 
   // Restaurar confirmación guardada
