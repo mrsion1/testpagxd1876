@@ -240,8 +240,12 @@
             Tu respuesta nos ayudará a preparar cada detalle.
           </p>
           <p class="small-note">
-            Al enviar, la información quedará guardada en este dispositivo y podrás
-            enviarla por WhatsApp a la persona encargada.
+            Esperamos tu respuestas con ansias, al enviar, uno de los 
+            coordinadores podrá ver tus datos y tu respuesta.
+          </p>
+          <p class="small-note">
+            Así nos aseguramos que sea algo especial para ti, 
+            como nuestro invitado y para nosotros. 
           </p>
         </div>
 
@@ -541,6 +545,32 @@
       <button id="openPlaylistButton" type="button" aria-label="Ir a la playlist" title="Ir a la playlist">☷</button>
     </div>
   </aside>
+  <div class="wedding-modal hidden" id="successModal" aria-hidden="true">
+  <div class="wedding-modal-backdrop"></div>
+
+  <div class="wedding-modal-card" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+    <div class="modal-icon">✓</div>
+
+    <p class="section-kicker">Confirmación enviada</p>
+
+    <h2 id="successModalTitle">
+      ¡Muchas gracias!
+    </h2>
+
+    <p>
+      Su invitación se ha enviado correctamente.
+      Estamos felices de contar con su respuesta.
+    </p>
+
+    <button
+      class="button button-primary"
+      id="closeSuccessModal"
+      type="button"
+    >
+      Aceptar
+    </button>
+  </div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
   <script src="script.js"></script>
