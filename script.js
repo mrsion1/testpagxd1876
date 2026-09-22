@@ -248,10 +248,10 @@
     return;
     }
 
-alert("¡Confirmación enviada correctamente! Muchas gracias.");
-rsvpFeedback.textContent =
-    "¡Confirmación enviada correctamente! Muchas gracias.";  
-document.getElementById("guestName").value = "";
+    alert("¡Confirmación enviada correctamente! Muchas gracias.");
+    rsvpFeedback.textContent =
+        "¡Confirmación enviada correctamente! Muchas gracias.";  
+    document.getElementById("guestName").value = "";
 
     try {
       
