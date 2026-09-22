@@ -1856,7 +1856,7 @@ body.player-collapsed {
 }
 
 .wedding-modal.hidden {
-  display: none;
+  display: none !important;
 }
 
 .wedding-modal-backdrop {
@@ -1869,7 +1869,7 @@ body.player-collapsed {
 
 .wedding-modal-card {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
   width: min(100%, 480px);
 
