@@ -248,43 +248,23 @@
     return;
     }
 
-    alert("¡Confirmación enviada correctamente! Muchas gracias.");
-    rsvpFeedback.textContent =
-        "¡Confirmación enviada correctamente! Muchas gracias.";  
-    document.getElementById("guestName").value = "";
+    
 
     try {
       
-      rsvpFeedback.textContent = "Tu confirmación fue guardada correctamente.";
-      document.getElementById("guestName").value = "";
+    alert("¡Confirmación enviada correctamente! Muchas gracias.");
+    rsvpFeedback.textContent =
+        "¡Confirmación enviada correctamente! Muchas gracias.";  
+    
     } catch {
       
     }
-
+  document.getElementById("guestName").value = "";
    
   });
 
   // Restaurar confirmación guardada
-  try {
-    const savedRsvp = JSON.parse(localStorage.getItem("weddingRsvp"));
-    if (savedRsvp) {
-      Object.entries(savedRsvp).forEach(([key, value]) => {
-        const field = rsvpForm.elements[key];
-        if (!field) return;
-
-        if (field instanceof RadioNodeList) {
-          [...field].forEach((radio) => {
-            radio.checked = radio.value === value;
-          });
-        } else if (key !== "savedAt") {
-          field.value = value;
-        }
-      });
-    }
-  } catch {
-    // Si el navegador bloquea localStorage, el formulario sigue funcionando.
-  }
-
+ 
   // Preferencias alimentarias
   
 
