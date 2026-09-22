@@ -256,20 +256,16 @@ rsvpForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
-    const formData =
-        new FormData(rsvpForm);
+    console.log("1. Submit detectado");
 
-    const data =
-        Object.fromEntries(
-            formData.entries()
-        );
+    const formData = new FormData(rsvpForm);
+    const data = Object.fromEntries(formData.entries());
 
+    console.log("2. Datos formulario:", data);
 
     if (!window.supabaseClient) {
 
-        console.error(
-            "Supabase no está inicializado"
-        );
+        console.error("3. Supabase NO inicializado");
 
         rsvpFeedback.textContent =
             "No se pudo conectar con el sistema de confirmaciones.";
@@ -277,22 +273,20 @@ rsvpForm.addEventListener("submit", async (event) => {
         return;
     }
 
+    console.log("3. Supabase OK");
 
-    const { error } =
-        await window.supabaseClient
-            .from("confirmaciones")
-            .insert({
-                nombre: data.guestName,
-                asistencia: data.attendance
-            });
+    const { error } = await window.supabaseClient
+        .from("confirmaciones")
+        .insert({
+            nombre: data.guestName,
+            asistencia: data.attendance
+        });
 
+    console.log("4. INSERT terminado");
 
     if (error) {
 
-        console.error(
-            "Error Supabase:",
-            error
-        );
+        console.error("5. Error Supabase:", error);
 
         rsvpFeedback.textContent =
             "No pudimos guardar tu confirmación. Intenta nuevamente.";
@@ -300,22 +294,17 @@ rsvpForm.addEventListener("submit", async (event) => {
         return;
     }
 
+    console.log("5. Confirmación guardada correctamente");
 
-    console.log(
-        "Confirmación guardada correctamente"
-    );
+    console.log("6. Voy a abrir el modal");
 
-
-    // ABRIR MODAL
     showSuccessModal();
 
+    console.log("7. showSuccessModal ejecutado");
 
-    // LIMPIAR FORMULARIO
     rsvpForm.reset();
 
-
-
-
+    rsvpFeedback.textContent = "";
 });
 
   // Restaurar confirmación guardada
