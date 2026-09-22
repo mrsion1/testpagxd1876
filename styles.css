@@ -1840,7 +1840,110 @@ body.player-collapsed {
     height: 31px;
     font-size: 0.72rem;
   }
+/* ========================================
+   MODAL DE CONFIRMACIÓN
+======================================== */
 
+.wedding-modal {
+  position: fixed;
+  z-index: 99999;
+  inset: 0;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+}
+
+.wedding-modal.hidden {
+  display: none;
+}
+
+.wedding-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(38, 55, 47, 0.72);
+  backdrop-filter: blur(7px);
+}
+
+.wedding-modal-card {
+  position: relative;
+  z-index: 1;
+
+  width: min(100%, 480px);
+
+  padding: 45px 35px;
+
+  border: 1px solid rgba(179, 149, 98, 0.35);
+  border-radius: 28px;
+
+  background: #fffdf9;
+
+  box-shadow:
+    0 30px 80px rgba(38, 55, 47, 0.28);
+
+  text-align: center;
+
+  animation: weddingModalAppear 0.35s ease;
+}
+
+.wedding-modal-card h2 {
+  margin-bottom: 18px;
+
+  color: var(--green-dark);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 6vw, 3rem);
+}
+
+.wedding-modal-card p {
+  color: var(--muted);
+}
+
+.modal-icon {
+  display: grid;
+
+  width: 72px;
+  height: 72px;
+
+  margin: 0 auto 22px;
+
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+
+  color: white;
+  background: var(--green);
+
+  font-size: 2rem;
+  font-weight: bold;
+
+  place-items: center;
+}
+
+.wedding-modal-card .button {
+  min-width: 160px;
+  margin-top: 12px;
+}
+
+@keyframes weddingModalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .wedding-modal-card {
+    padding: 36px 24px;
+    border-radius: 22px;
+  }
+}
   .player-transport .player-play {
     width: 40px;
     height: 40px;
