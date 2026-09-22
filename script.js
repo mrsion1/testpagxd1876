@@ -14,6 +14,11 @@
   const fullCoupleWords = `${config.couple.partner1} y ${config.couple.partner2}`;
   const pareja1xd =`${config.couple.partner1}`;
   const pareja2xd =`${config.couple.partner2}`;
+  const successModal =
+    document.getElementById("successModal");
+
+const closeSuccessModal =
+    document.getElementById("closeSuccessModal");
   // Inserción de datos configurables
   document.title = `Nos casamos | ${fullCouple}`;
   setText("#navCouple", config.couple.initials);
@@ -247,11 +252,13 @@
 
     return;
     }
-
+  
     
 
     try {
-      
+      showSuccessModal();
+
+    document.getElementById("guestName").value = "";
     alert("¡Confirmación enviada correctamente! Muchas gracias.");
     rsvpFeedback.textContent =
         "¡Confirmación enviada correctamente! Muchas gracias.";  
@@ -264,7 +271,34 @@
   });
 
   // Restaurar confirmación guardada
- 
+ function showSuccessModal() {
+
+    successModal.classList.remove("hidden");
+
+    successModal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function hideSuccessModal() {
+
+    successModal.classList.add("hidden");
+
+    successModal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.style.overflow = "";
+}
+  closeSuccessModal.addEventListener(
+    "click",
+    hideSuccessModal
+);
   // Preferencias alimentarias
   
 
