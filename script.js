@@ -314,8 +314,7 @@ rsvpForm.addEventListener("submit", async (event) => {
     rsvpForm.reset();
 
 
-    // LIMPIAR MENSAJES
-    rsvpFeedback.textContent = "";
+
 
 });
 
