@@ -212,11 +212,7 @@ function hideSuccessModal() {
     return `${yyyy}${mm}${dd}T${hh}${min}${ss}Z`;
   };
 
-  $("#calendarButton").addEventListener("click", () => {
-
-  // ==========================================
-  // DETECTAR DISPOSITIVO
-  // ==========================================
+ $("#calendarButton").addEventListener("click", () => {
 
   const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
@@ -224,31 +220,47 @@ function hideSuccessModal() {
     /iPad|iPhone|iPod/.test(userAgent) ||
     (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-  const isAndroid = /android/i.test(userAgent);
+  // =========================
+  // DATOS CEREMONIA
+  // =========================
+
+  const ceremonyTitle = `Ceremonia - Boda de ${fullCouple}`;
+
+  const ceremonyLocation =
+    `${config.ceremony.venue}, ${config.ceremony.address}`;
+
+  const ceremonyDescription =
+    `Ceremonia de nuestra boda. Ubicación: ${config.ceremony.mapsUrl}`;
+
+  const ceremonyStart =
+    formatCalendarDate(config.ceremony.dateTime);
+
+  const ceremonyEnd =
+    formatCalendarDate(config.ceremony.endDateTime);
 
 
-  // ==========================================
-  // DATOS DEL EVENTO
-  // ==========================================
+  // =========================
+  // DATOS RECEPCIÓN
+  // =========================
 
-  const titulo = `Boda de ${fullCouple}`;
+  const receptionTitle = `Recepción - Boda de ${fullCouple}`;
 
-  const ubicacion =
+  const receptionLocation =
     `${config.reception.venue}, ${config.reception.address}`;
 
-  const descripcion =
-    "¡Nos casamos! Será una alegría contar con tu presencia.";
+  const receptionDescription =
+    `Recepción de nuestra boda. Ubicación: ${config.reception.mapsUrl}`;
 
-  const fechaInicio =
-    formatCalendarDate(config.event.dateTime);
+  const receptionStart =
+    formatCalendarDate(config.reception.dateTime);
 
-  const fechaFin =
-    formatCalendarDate(config.event.endDateTime);
+  const receptionEnd =
+    formatCalendarDate(config.reception.endDateTime);
 
 
-  // ==========================================
-  // IOS → APPLE CALENDAR (.ICS)
-  // ==========================================
+  // =========================
+  // IOS
+  // =========================
 
   if (isIOS) {
 
@@ -258,23 +270,29 @@ function hideSuccessModal() {
       "PRODID:-//Invitacion Boda//ES",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
+
+      // CEREMONIA
       "BEGIN:VEVENT",
-      `UID:${Date.now()}@invitacion-boda`,
+      `UID:${Date.now()}-ceremonia@invitacion-boda`,
       `DTSTAMP:${formatCalendarDate(new Date().toISOString())}`,
-      `DTSTART:${fechaInicio}`,
-      `DTEND:${fechaFin}`,
-      `SUMMARY:${titulo}`,
-      `LOCATION:${ubicacion}`,
-      `DESCRIPTION:${descripcion}`,
-
-      // Recordatorio 1 día antes
-      "BEGIN:VALARM",
-      "TRIGGER:-P1D",
-      "ACTION:DISPLAY",
-      "DESCRIPTION:¡Mañana es el matrimonio!",
-      "END:VALARM",
-
+      `DTSTART:${ceremonyStart}`,
+      `DTEND:${ceremonyEnd}`,
+      `SUMMARY:${ceremonyTitle}`,
+      `LOCATION:${ceremonyLocation}`,
+      `DESCRIPTION:${ceremonyDescription}`,
       "END:VEVENT",
+
+      // RECEPCIÓN
+      "BEGIN:VEVENT",
+      `UID:${Date.now()}-recepcion@invitacion-boda`,
+      `DTSTAMP:${formatCalendarDate(new Date().toISOString())}`,
+      `DTSTART:${receptionStart}`,
+      `DTEND:${receptionEnd}`,
+      `SUMMARY:${receptionTitle}`,
+      `LOCATION:${receptionLocation}`,
+      `DESCRIPTION:${receptionDescription}`,
+      "END:VEVENT",
+
       "END:VCALENDAR"
     ].join("\r\n");
 
@@ -291,7 +309,8 @@ function hideSuccessModal() {
     const link = document.createElement("a");
 
     link.href = url;
-    link.download = "boda.ics";
+    link.download =
+      `boda-${config.couple.partner1}-${config.couple.partner2}.ics`;
 
     document.body.appendChild(link);
 
@@ -307,25 +326,122 @@ function hideSuccessModal() {
   }
 
 
-  // ==========================================
-  // ANDROID O PC → GOOGLE CALENDAR
-  // ==========================================
+  // =========================
+  // ANDROID / PC
+  // =========================
 
-  if (isAndroid || !isIOS) {
+  const ceremonyGoogleUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent(ceremonyTitle) +
+    "&dates=" + ceremonyStart + "/" + ceremonyEnd +
+    "&details=" + encodeURIComponent(ceremonyDescription) +
+    "&location=" + encodeURIComponent(ceremonyLocation);
 
-    const googleCalendarUrl =
-      "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-      "&text=" + encodeURIComponent(titulo) +
-      "&dates=" + fechaInicio + "/" + fechaFin +
-      "&details=" + encodeURIComponent(descripcion) +
-      "&location=" + encodeURIComponent(ubicacion);
 
+  const receptionGoogleUrl =
+    "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+    "&text=" + encodeURIComponent(receptionTitle) +
+    "&dates=" + receptionStart + "/" + receptionEnd +
+    "&details=" + encodeURIComponent(receptionDescription) +
+    "&location=" + encodeURIComponent(receptionLocation);
+
+
+  // =========================
+  // MODAL DE SELECCIÓN
+  // =========================
+
+  let calendarModal = document.querySelector("#calendarSelectModal");
+
+  if (!calendarModal) {
+
+    calendarModal = document.createElement("div");
+
+    calendarModal.id = "calendarSelectModal";
+
+    calendarModal.innerHTML = `
+      <div class="calendar-modal-backdrop"></div>
+
+      <div class="calendar-modal-card">
+
+        <button
+          type="button"
+          class="calendar-modal-close"
+          aria-label="Cerrar">
+          ×
+        </button>
+
+        <h3>Agregar al calendario</h3>
+
+        <p>
+          Selecciona el evento que deseas agregar:
+        </p>
+
+        <button
+          type="button"
+          class="calendar-event-button"
+          id="addCeremonyCalendar">
+          Ceremonia
+        </button>
+
+        <button
+          type="button"
+          class="calendar-event-button"
+          id="addReceptionCalendar">
+          Recepción
+        </button>
+
+      </div>
+    `;
+
+    document.body.appendChild(calendarModal);
+  }
+
+
+  // MOSTRAR MODAL
+
+  calendarModal.classList.add("show");
+
+
+  // CEREMONIA
+
+  $("#addCeremonyCalendar").onclick = () => {
     window.open(
-      googleCalendarUrl,
+      ceremonyGoogleUrl,
       "_blank",
       "noopener,noreferrer"
     );
-  }
+  };
+
+
+  // RECEPCIÓN
+
+  $("#addReceptionCalendar").onclick = () => {
+    window.open(
+      receptionGoogleUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+
+  // CERRAR
+
+  calendarModal
+    .querySelector(".calendar-modal-close")
+    .onclick = () => {
+
+      calendarModal.classList.remove("show");
+
+    };
+
+
+  calendarModal
+    .querySelector(".calendar-modal-backdrop")
+    .onclick = () => {
+
+      calendarModal.classList.remove("show");
+
+    };
 
 });
 
