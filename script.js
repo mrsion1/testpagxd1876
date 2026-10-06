@@ -329,14 +329,7 @@ function hideSuccessModal() {
 
 });
 
-    const blob = new Blob([calendarContent], { type: "text/calendar;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `boda-${config.couple.partner1}-${config.couple.partner2}.ics`;
-    link.click();
-    URL.revokeObjectURL(url);
-  });
+    
 
   // Confirmación de asistencia
   const rsvpForm = $("#rsvpForm");
