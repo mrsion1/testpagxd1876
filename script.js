@@ -213,21 +213,121 @@ function hideSuccessModal() {
   };
 
   $("#calendarButton").addEventListener("click", () => {
+
+  // ==========================================
+  // DETECTAR DISPOSITIVO
+  // ==========================================
+
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  const isIOS =
+    /iPad|iPhone|iPod/.test(userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  const isAndroid = /android/i.test(userAgent);
+
+
+  // ==========================================
+  // DATOS DEL EVENTO
+  // ==========================================
+
+  const titulo = `Boda de ${fullCouple}`;
+
+  const ubicacion =
+    `${config.reception.venue}, ${config.reception.address}`;
+
+  const descripcion =
+    "¡Nos casamos! Será una alegría contar con tu presencia.";
+
+  const fechaInicio =
+    formatCalendarDate(config.event.dateTime);
+
+  const fechaFin =
+    formatCalendarDate(config.event.endDateTime);
+
+
+  // ==========================================
+  // IOS → APPLE CALENDAR (.ICS)
+  // ==========================================
+
+  if (isIOS) {
+
     const calendarContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
       "PRODID:-//Invitacion Boda//ES",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
       "BEGIN:VEVENT",
       `UID:${Date.now()}@invitacion-boda`,
       `DTSTAMP:${formatCalendarDate(new Date().toISOString())}`,
-      `DTSTART:${formatCalendarDate(config.event.dateTime)}`,
-      `DTEND:${formatCalendarDate(config.event.endDateTime)}`,
-      `SUMMARY:Boda de ${fullCouple}`,
-      `LOCATION:${config.reception.venue}, ${config.reception.address}`,
-      "DESCRIPTION:¡Nos casamos! Será una alegría contar con tu presencia.",
+      `DTSTART:${fechaInicio}`,
+      `DTEND:${fechaFin}`,
+      `SUMMARY:${titulo}`,
+      `LOCATION:${ubicacion}`,
+      `DESCRIPTION:${descripcion}`,
+
+      // Recordatorio 1 día antes
+      "BEGIN:VALARM",
+      "TRIGGER:-P1D",
+      "ACTION:DISPLAY",
+      "DESCRIPTION:¡Mañana es el matrimonio!",
+      "END:VALARM",
+
       "END:VEVENT",
       "END:VCALENDAR"
     ].join("\r\n");
+
+
+    const blob = new Blob(
+      [calendarContent],
+      {
+        type: "text/calendar;charset=utf-8"
+      }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "boda.ics";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    setTimeout(() => {
+      URL.revokeObjectURL(url);
+    }, 1000);
+
+    return;
+  }
+
+
+  // ==========================================
+  // ANDROID O PC → GOOGLE CALENDAR
+  // ==========================================
+
+  if (isAndroid || !isIOS) {
+
+    const googleCalendarUrl =
+      "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+      "&text=" + encodeURIComponent(titulo) +
+      "&dates=" + fechaInicio + "/" + fechaFin +
+      "&details=" + encodeURIComponent(descripcion) +
+      "&location=" + encodeURIComponent(ubicacion);
+
+    window.open(
+      googleCalendarUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }
+
+});
 
     const blob = new Blob([calendarContent], { type: "text/calendar;charset=utf-8" });
     const url = URL.createObjectURL(blob);
