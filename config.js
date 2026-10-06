@@ -14,7 +14,7 @@ window.WEDDING_CONFIG = {
   event: {
     // Formato recomendado: AAAA-MM-DDTHH:MM:SS-03:00
     dateTime: "2027-03-20T17:30:00-03:00",
-    endDateTime: "2027-01-31T03:00:00-03:00",
+    endDateTime: "2027-03-21T03:00:00-03:00",
     dateText: "20 de marzo de 2027",
     dayText: "Sabado",
     mainPlace: "Parroquia Divino Maestro · Rancagua",
