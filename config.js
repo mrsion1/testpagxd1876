@@ -25,14 +25,18 @@ window.WEDDING_CONFIG = {
     time: "17:30 horas",
     venue: "Parroquia Divino Maestro",
     address: "Marta Brunet 038, 2831381 Rancagua, O'Higgins",
-    mapsUrl: "https://maps.app.goo.gl/Ngan9kmz31t6HtVAA"
+    mapsUrl: "https://maps.app.goo.gl/Ngan9kmz31t6HtVAA",
+    dateTime: "2027-03-20T17:30:00-03:00",
+    endDateTime: "2027-03-20T19:00:00-03:00"
   },
 
   reception: {
     time: "19:00 horas",
     venue: "Centro De Eventos Terrabella",
     address: "Camino el litre, La Gloria S/N, sector Requínoa, O'Higgins",
-    mapsUrl: "https://maps.app.goo.gl/jCWYEAkoveamBRyFA"
+    mapsUrl: "https://maps.app.goo.gl/jCWYEAkoveamBRyFA",
+    dateTime: "2027-03-20T19:00:00-03:00",
+    endDateTime: "2027-03-21T03:00:00-03:00"
   },
 
   contact: {
